@@ -13,8 +13,8 @@ set(SOURCES ${MY_SOURCES})
 
 # Comment out following statements to build project without eez flow support.
 # Also, build lvgl-demo-no-flow.eez-project with EEZ Studio.
-add_definitions(-DHAS_FLOW_SUPPORT=1)
-set (HAS_FLOW_SUPPORT 1)
+#add_definitions(-DHAS_FLOW_SUPPORT=1)
+#set (HAS_FLOW_SUPPORT 1)
 
 file(GLOB_RECURSE my_src
     ./src/*.cpp

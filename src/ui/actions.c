@@ -4,4 +4,12 @@
 #include "screens.h"
 #include "ui.h"
 
-// Define native actions here
+extern int32_t counter;
+
+void action_inc_counter(lv_event_t *e) {
+    counter++;
+}
+
+void action_dec_counter(lv_event_t *e) {
+    counter--;
+}
