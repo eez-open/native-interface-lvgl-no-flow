@@ -8,6 +8,8 @@
 int32_t counter = 0;
 int32_t selected_item_index = 0;
 
+char text_input[1024] = { 0 };
+
 int32_t get_var_selected_item_index() {
     return selected_item_index;
 }
@@ -27,3 +29,13 @@ const char *get_var_counter_info() {
     snprintf(counter_info, sizeof(counter_info), "Counter is %d", counter);
     return counter_info;
 }
+
+const char *get_var_input_text() {
+    return text_input;
+}
+
+void set_var_input_text(const char *value) {
+    strncpy(text_input, value, sizeof(text_input));
+    text_input[sizeof(text_input) - 1] = 0;
+}
+
