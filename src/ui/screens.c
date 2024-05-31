@@ -30,8 +30,10 @@ static void event_handler_cb_main_obj3(lv_event_t *e) {
     void *flowState = e->user_data;
     if (event == LV_EVENT_VALUE_CHANGED) {
         lv_obj_t *ta = lv_event_get_target(e);
-        int32_t value = lv_dropdown_get_selected(ta);
-        set_var_selected_item_index(value);
+        if (tick_value_change_obj != ta) {
+            int32_t value = lv_dropdown_get_selected(ta);
+            set_var_selected_item_index(value);
+        }
     }
 }
 
@@ -48,8 +50,10 @@ static void event_handler_cb_keyboard_test_my_textarea(lv_event_t *e) {
     void *flowState = e->user_data;
     if (event == LV_EVENT_VALUE_CHANGED) {
         lv_obj_t *ta = lv_event_get_target(e);
-        const char *value = lv_textarea_get_text(ta);
-        set_var_input_text(value);
+        if (tick_value_change_obj != ta) {
+            const char *value = lv_textarea_get_text(ta);
+            set_var_input_text(value);
+        }
     }
 }
 
